@@ -1,0 +1,43 @@
+.item {
+    transition-property: all !important;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    font-size: 100%;
+    font-weight: 400;
+    /*animation: FadeOut 1s ease-in-out;*/
+}
+
+.enlarged-as-title {
+    font-size: 400%;
+    font-weight: 800;
+    /*animation: FadeIn 1s ease-in-out;*/
+}
+
+@keyframes FadeIn {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes FadeOut {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    99% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}

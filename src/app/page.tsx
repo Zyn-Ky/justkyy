@@ -1,5 +1,7 @@
-import Image from "next/image";
-
 export default function Home() {
-  return <></>;
+    return <>
+        <div className="h-[100vh] snap-center">Test</div>
+        <div className="h-[100vh] snap-center">Test</div>
+        <div className="h-[100vh] snap-center">Test</div>
+    </>;
 }

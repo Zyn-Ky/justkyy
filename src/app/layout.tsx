@@ -1,7 +1,8 @@
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import React from "react";
+import ClientWrapper from "@/components/GeneralWrapper/ClientWrapper";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -24,12 +25,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="snap-y snap-mandatory">
+        <html lang="en" className="h-full">
         <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased snap-y snap-mandatory whitespace-nowrap`}
+            className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`}
         >
-        <Navbar/>
-        {children}
+        <ClientWrapper>
+            {children}
+        </ClientWrapper>
         </body>
         </html>
     );

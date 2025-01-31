@@ -1,3 +1,14 @@
+.backhead {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(7px);
+}
+
+@media screen and (max-width: 500px) {
+    .backhead {
+        justify-content: center;
+    }
+}
+
 .item {
     transition-property: all !important;
     transition-duration: 0.2s;
@@ -10,7 +21,6 @@
 .enlarged-as-title {
     font-size: 400%;
     font-weight: 800;
-    /*animation: FadeIn 1s ease-in-out;*/
 }
 
 @keyframes FadeIn {

@@ -1,37 +1,39 @@
+import {Box, Paper, Typography} from "@mui/material";
+import WaveImg from "@/external/icons/wave-ios-emoji.png"
+import Image from "next/image";
+import SchoolIcon from '@mui/icons-material/School';
+import PublicBetaSection from "@/components/SSR/PublicBetaSection";
+import ProtectedUI from "@/components/SSR/ProtectedUI";
+
 export default function Home() {
     return <>
-        <div className="h-[-webkit-fill-available]  supports-[-moz-appearance:none]:h-full snap-center">Section 1<br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum at justo nec gravida. Phasellus
-            mattis velit quis dolor mattis, quis scelerisque ante ullamcorper. Integer varius, tortor nec porttitor
-            consectetur, leo ex tempor dolor, et auctor elit ex id libero. Aliquam at neque tincidunt, porta ante a,
-            tempor magna. Donec auctor arcu non metus suscipit tempor. Sed ac cursus metus. Suspendisse potenti.
-            Vestibulum non mi congue, consequat sem eget, ullamcorper ex. Nunc sit amet accumsan leo. Duis facilisis
-            orci euismod, aliquet nisi sodales, iaculis enim. Ut eget metus a ex varius tincidunt sed in libero.
-            Pellentesque vestibulum libero lorem, nec feugiat velit condimentum nec. Class aptent taciti sociosqu ad
-            litora torquent per conubia nostra, per inceptos himenaeos.
+        <div className="h-full snap-end flex items-start justify-center">
+            <Paper elevation={3} sx={{borderRadius: "28px", width: '90%', height: '90%', mt: "1rem"}}
+                   square={false}
+                   className="sm:p-8 p-6"
+            >
+                <Typography variant="h2" component="p">
+                    <Image src={WaveImg} alt="👋" title="👋 iOS Wave Emoji" width={64} height={64}/>
+                </Typography>
+                <Typography variant="h3" component="h1" fontWeight={800}><span
+                    className="sm:text-[length:inherit] text-base">Hello, I’m</span><br/>Kornelius
+                    Yabes</Typography>
+            </Paper>
         </div>
-        <div className="h-[-webkit-fill-available]  supports-[-moz-appearance:none]:h-full snap-center">Section 2<br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum at justo nec gravida. Phasellus
-            mattis velit quis dolor mattis, quis scelerisque ante ullamcorper. Integer varius, tortor nec porttitor
-            consectetur, leo ex tempor dolor, et auctor elit ex id libero. Aliquam at neque tincidunt, porta ante a,
-            tempor magna. Donec auctor arcu non metus suscipit tempor. Sed ac cursus metus. Suspendisse potenti.
-            Vestibulum non mi congue, consequat sem eget, ullamcorper ex. Nunc sit amet accumsan leo. Duis facilisis
-            orci euismod, aliquet nisi sodales, iaculis enim. Ut eget metus a ex varius tincidunt sed in libero.
-            Pellentesque vestibulum libero lorem, nec feugiat velit condimentum nec. Class aptent taciti sociosqu ad
-            litora torquent per conubia nostra, per inceptos himenaeos.
-
-        </div>
-        <div className="h-[-webkit-fill-available] h-full snap-center">Section 3<br/>Lorem ipsum
-            dolor
-            sit amet,
-            consectetur adipiscing elit. Nullam fermentum at justo nec gravida. Phasellus mattis velit quis dolor
-            mattis, quis scelerisque ante ullamcorper. Integer varius, tortor nec porttitor consectetur, leo ex tempor
-            dolor, et auctor elit ex id libero. Aliquam at neque tincidunt, porta ante a, tempor magna. Donec auctor
-            arcu non metus suscipit tempor. Sed ac cursus metus. Suspendisse potenti. Vestibulum non mi congue,
-            consequat sem eget, ullamcorper ex. Nunc sit amet accumsan leo. Duis facilisis orci euismod, aliquet nisi
-            sodales, iaculis enim. Ut eget metus a ex varius tincidunt sed in libero. Pellentesque vestibulum libero
-            lorem, nec feugiat velit condimentum nec. Class aptent taciti sociosqu ad litora torquent per conubia
-            nostra, per inceptos himenaeos.
+        <div className="h-full snap-center px-8">
+            <ProtectedUI fallbackElement={<>
+                <PublicBetaSection/>
+            </>} forceFallbackElement={true}>
+                <p>Last updated in 6969</p>
+                <Box display="flex">
+                    <Box display="flex" gap="0.5rem" minHeight="64px">
+                        <SchoolIcon width={64} height={64} fontSize="large"/>
+                        <Box display="flex" flexDirection="column">
+                            <p>Education</p>
+                        </Box>
+                    </Box>
+                </Box>
+            </ProtectedUI>
 
         </div>
     </>;

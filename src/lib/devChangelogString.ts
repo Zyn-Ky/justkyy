@@ -1,4 +1,13 @@
 export const changelogText = `
+(10 Feb 2025)
+v1.1.0 Beta Release
+
+- Added new page: Blog
+- Minor bug fix
+
+Issues:
+- The animation may be slightly choppy.
+
 (9 Feb 2025)
 v1.0.0 Beta Release
 

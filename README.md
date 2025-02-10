@@ -21,6 +21,6 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically
 optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Issues
+## Issue
 
 ![Padding Problem GIF](https://github.com/Zyn-Ky/justkyy/blob/main/docs/justkyy-prj-issue-scroll-jank-1.gif?raw=true)

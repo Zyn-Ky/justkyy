@@ -12,6 +12,7 @@
 .item {
     transition-property: all !important;
     transition-duration: 0.2s;
+    transition-delay: 0.1s;
     transition-timing-function: ease-in;
     font-size: 1rem;
     font-weight: 400;

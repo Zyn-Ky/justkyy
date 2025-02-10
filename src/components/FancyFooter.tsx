@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function FancyFooter() {
     return <>
-        <Paper component="footer" elevation={3} className="flex w-full flex-col">
+        <Paper component="footer" elevation={3} className="flex w-full flex-col rounded-none">
             <section className="flex gap-4 flex-grow h-64 p-8">
                 <div>
                     <Typography variant="h6" fontWeight="bold">Social</Typography>

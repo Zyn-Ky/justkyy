@@ -1,6 +1,12 @@
 export const DEFAULT_ROOT_PUBLIC_PATH_ID = "ROOT_ABOUT_ME"
 
-export const webPublicUrlPaths = [{
+export type PUBLIC_URL_PATH = {
+    headerTitle: string
+    path: string
+    id: string
+}
+
+export const webPublicUrlPaths: PUBLIC_URL_PATH[] = [{
     headerTitle: "About Me",
     path: "/",
     id: "ROOT_ABOUT_ME"

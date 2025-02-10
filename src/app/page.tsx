@@ -7,10 +7,10 @@ import ProtectedUI from "@/components/SSR/ProtectedUI";
 
 export default function Home() {
     return <>
-        <div className="h-full snap-end flex items-start justify-center">
-            <Paper elevation={3} sx={{borderRadius: "28px", width: '90%', height: '90%', mt: "1rem"}}
+        <div className="h-full snap-end flex items-start justify-center container mx-auto">
+            <Paper elevation={3}
                    square={false}
-                   className="sm:p-8 p-6"
+                   className="sm:p-8 p-6 mt-4 !rounded-[28px] w-full h-[90%]"
             >
                 <Typography variant="h2" component="p">
                     <Image src={WaveImg} alt="👋" title="👋 iOS Wave Emoji" width={64} height={64}/>
@@ -20,10 +20,10 @@ export default function Home() {
                     Yabes</Typography>
             </Paper>
         </div>
-        <div className="h-full snap-center px-8">
+        <div className="h-full snap-center px-8 container mx-auto">
             <ProtectedUI fallbackElement={<>
                 <PublicBetaSection/>
-            </>} forceFallbackElement={true}>
+            </>}>
                 <p>Last updated in 6969</p>
                 <Box display="flex">
                     <Box display="flex" gap="0.5rem" minHeight="64px">

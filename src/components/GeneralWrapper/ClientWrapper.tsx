@@ -32,7 +32,7 @@ const disabledAnimMode = {
 }
 
 export default function ClientWrapper({children}: { children: ReactNode }) {
-    const [navigationHeight, setNavigationHeight] = useState(0);
+    const [navigationHeight, setNavigationHeight] = useState(88);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [browserType, setBrowserType] = useState<ReturnType<typeof whichBrowser>>("Unknown");
     const isReducedMotion = useMediaQuery(

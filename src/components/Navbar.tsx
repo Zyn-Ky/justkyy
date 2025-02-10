@@ -43,9 +43,8 @@ function NavItem({children, enlarge, hidden, underline, href}: PropsWithChildren
         }
     }, [linkRef.current]);
     return (<>
-        <Collapse orientation="horizontal" in={!(hidden ?? false)}>
+        <Collapse orientation="horizontal" in={!(hidden ?? false)} unmountOnExit={true}>
             <div className="relative">
-
                 {underline && (
                     <span className={clsx(navbarCss["item"], "opacity-0", "pointer-events-none", "select-none", {
                         [navbarCss["enlarged-as-title"]]: enlarge
@@ -102,7 +101,11 @@ export default function Navbar({onChangeHeaderHeight, containerRef, disableEnlar
     const navContainerRef = useRef<HTMLElement>(null);
     const animationFrameRef = useRef<number>(0);
 
+
     const currentPathname = usePathname();
+    const forceShowAllItems = webPublicUrlPaths.findIndex(({path}) => {
+        return currentPathname === path;
+    }) === -1;
     const activePathID = webPublicUrlPaths.find(({path}) => path.indexOf(currentPathname) > -1)?.id ?? "DEFAULT_ROOT_PUBLIC_PATH_ID";
 
     const currentEnlargeThreshold = activePathID === DEFAULT_ROOT_PUBLIC_PATH_ID ? ENLARGED_TITLE_ROOT_ABOUT_ME_THRESHOLD : ENLARGED_TITLE_DEFAULT_THRESHOLD
@@ -131,7 +134,8 @@ export default function Navbar({onChangeHeaderHeight, containerRef, disableEnlar
              className={`${navbarCss.backhead} z-40 p-8 flex gap-2.5 fixed top-0 left-0 w-full h-auto whitespace-nowrap`}>
             {webPublicUrlPaths.map(({path, headerTitle, id}, idx) => (
                 <NavItem enlarge={focusOnOneTitle && id === activePathID}
-                         hidden={focusOnOneTitle && id !== activePathID} underline={id === activePathID} href={path}
+                         hidden={forceShowAllItems === true ? false : (focusOnOneTitle && id !== activePathID)}
+                         underline={id === activePathID} href={path}
                          key={idx}>{headerTitle}</NavItem>))}
 
 

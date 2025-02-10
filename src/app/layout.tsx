@@ -5,6 +5,7 @@ import React, {Suspense} from "react";
 import ClientWrapper from "@/components/GeneralWrapper/ClientWrapper";
 import NextTopLoader from 'nextjs-toploader';
 import ComingSoonUI from "@/components/SSR/ComingSoonUI";
+import {AppRouterCacheProvider} from "@mui/material-nextjs/v15-appRouter";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -30,14 +31,16 @@ export default function RootLayout({
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`}
         >
-        <ClientWrapper>
-            <NextTopLoader crawl/>
-            <Suspense
-                fallback={<p>Loading...</p>}>
-                {false && <ComingSoonUI/>}
-                {true && children}
-            </Suspense>
-        </ClientWrapper>
+        <AppRouterCacheProvider>
+            <ClientWrapper>
+                <NextTopLoader crawl/>
+                <Suspense
+                    fallback={<p>Loading...</p>}>
+                    {false && <ComingSoonUI/>}
+                    {true && children}
+                </Suspense>
+            </ClientWrapper>
+        </AppRouterCacheProvider>
         </body>
         </html>
     );

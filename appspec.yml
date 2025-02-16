@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /build/*
-    destination: /home/ec2-user/next-app/
+    destination: /home/builder/next-app/
 hooks:
   AfterInstall:
     - location: scripts/install_dependencies.sh

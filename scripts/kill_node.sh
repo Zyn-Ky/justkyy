@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/ec2-user/next-app
+cd /home/ubuntu/next-app
 npx pm2 stop next-app 

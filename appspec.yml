@@ -1,28 +1,12 @@
 version: 0.0
 os: linux
-
 files:
-  - source: /
-    destination: /home/ec2-user/justkyy
-    overwrite: true
-file_exists_behavior: OVERWRITE
-
-permissions:
-  - object: /home/ec2-user/justkyy/scripts
-    pattern: "**"
-    owner: ec2-user
-    group: ec2-user
-    mode: 777
-    type : 
-      - file
-
+  - source: /build/*
+    destination: /home/ec2-user/next-app/
 hooks:
-
-  BeforeInstall:
-
   AfterInstall:
-
+    - location: scripts/install_dependencies.sh
+      timeout: 300
   ApplicationStart:
-    - location: scripts/app_start.sh
-      timeout: 2500
-      runas: ec2-user
+    - location: scripts/start_application.sh
+      timeout: 300
